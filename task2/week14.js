@@ -35,24 +35,17 @@ const negativeGrades = grades.filter(el=>el <60);
 console.log(`Отрицательные оценки (<60 баллов) получили ${negativeGrades.length} студентов.`);
 
 //7
-function toLetterGrade(grades) {
-    var textGrade = '';
-    var result = [];
-    for (i = 0; i < grades.length; i++) {
-      textG = '';
-      if (grades[i] >= 80) {
-        textGrade = "A";
-      } else if (grades[i] >= 60) {
-        textGrade = "B";
-      } else if (grades[i] >= 40) {
-        textGrade = "C";
-      } else if (grades[i] >= 20) {
-        textGrade = "D";
-      } else {
-        textGrade = "E";
-      };
-      result.push(textGrade);
+let letterGrades = grades.map(function (item) {
+    if (item >= 80) {
+       return item = "A";
+    } else if (item >= 60) {
+        return item = "B";
+    } else if (item >= 40) {
+        return item = "C";
+    } else if (item >= 20) {
+        return item = "D";
+    } else {
+        return  item = "E";
     }
-    return result;
-  };
-console.log(toLetterGrade(grades));
+});
+console.log(letterGrades);
