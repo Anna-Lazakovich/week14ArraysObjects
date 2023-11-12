@@ -35,21 +35,24 @@ const negativeGrades = grades.filter(el=>el <60);
 console.log(`Отрицательные оценки (<60 баллов) получили ${negativeGrades.length} студентов.`);
 
 //7
-//const gradesLetter (el) => {
-//    let resultGrade = "";
-//    if (el >= 80) {
-//        resultGrade = 'A';
-//    } else if {
-//        (el >= 60 && el <=79)
-//        resultGrade = 'B';
-//    } else if {
-//        (el >= 40 && el <=59)
-//        resultGrade = 'C';
-//    } else if {
-//        (el >= 20 && el <=39)
-//        resultGrade = 'D';
-//    } else {
-//        resultGrade = 'E';
-//};
-//};
-//console.log();
+function toLetterGrade(grades) {
+    var textGrade = '';
+    var result = [];
+    for (i = 0; i < grades.length; i++) {
+      textG = '';
+      if (grades[i] >= 80) {
+        textGrade = "A";
+      } else if (grades[i] >= 60) {
+        textGrade = "B";
+      } else if (grades[i] >= 40) {
+        textGrade = "C";
+      } else if (grades[i] >= 20) {
+        textGrade = "D";
+      } else {
+        textGrade = "E";
+      };
+      result.push(textGrade);
+    }
+    return result;
+  };
+console.log(toLetterGrade(grades));
